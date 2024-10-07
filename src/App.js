@@ -23,7 +23,7 @@ function App() {
   const handleSearch = async () => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_SEARCH_TOOL_API_URL}/api/search`,
+        "https://search-tool-api.vercel.app/api/search",
         {
           params: {
             q: query,
@@ -41,7 +41,7 @@ function App() {
     try {
       const formattedContent = content.join(" ").replace(/\.\.\./g, "");
       const response = await axios.post(
-        `${process.env.REACT_APP_SEARCH_TOOL_API_URL}/api/generate`,
+        "https://search-tool-api.vercel.app/api/generate",
         { formattedContent }
       );
       const updatedData = [...processedData];
